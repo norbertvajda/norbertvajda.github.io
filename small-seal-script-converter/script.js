@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const input = document.getElementById("input");
     const output = document.getElementById("output");
+    const fontSizeSlider = document.getElementById("size");
 
     let size = 36;
 
@@ -8,6 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
     
     input.addEventListener("input", () => {
         output.textContent = input.value;
+    });
+
+    fontSizeSlider.addEventListener("input", () => {
+        output.style.fontSize = slider.value + "px";
     });
     
     document.getElementById("larger").addEventListener("click", () => {
