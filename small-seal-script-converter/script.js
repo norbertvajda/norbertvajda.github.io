@@ -1,41 +1,85 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+    // Text input
     const input = document.getElementById("input");
+
+    // Output div
     const output = document.getElementById("output");
-    const fontSizeSlider = document.getElementById("size");
+
+    // Sliders
+    const fontSize = document.getElementById("fontSize");
+    const lineHeight = document.getElementById("lineHeight");
+    const letterSpacing = document.getElementById("letterSpacing");
+
+    // Slider value labels
+    const fontSizeValue = document.getElementById("fontSizeValue");
+    const lineHeightValue = document.getElementById("lineHeightValue");
+    const letterSpacingValue = document.getElementById("letterSpacingValue");
+    
+    // Color pickers
+    const textColor = document.getElementById("textColor");
+    const backgroundColor = document.getElementById("backgroundColor");
+    
+    // Radio button groups
+    const writingModes = document.querySelectorAll("input[name='mode']");
+    const alignments = document.querySelectorAll("input[name='align']");
 
     let size = 36;
 
     output.style.fontSize = size + "px";
-    
+
+    // Live preview
     input.addEventListener("input", () => {
         output.textContent = input.value;
     });
 
-    fontSizeSlider.addEventListener("input", () => {
-        output.style.fontSize = slider.value + "px";
+    // Font size
+    fontSize.addEventListener("input", () => {
+        output.style.fontSize = fontSize.value + "px";
+        fontSizeValue.textContent = fontSize.value + " px";
     });
     
-    document.getElementById("larger").addEventListener("click", () => {
-        size += 2;
-        output.style.fontSize = size + "px";
+    // Line spacing
+    lineHeight.addEventListener("input", () => {
+        output.style.lineHeight = lineHeight.value;
+        lineHeightValue.textContent = lineHeight.value;
     });
     
-    document.getElementById("smaller").addEventListener("click", () => {
-        size = Math.max(8, size - 2);
-        output.style.fontSize = size + "px";
+    // Letter spacing
+    letterSpacing.addEventListener("input", () => {
+        output.style.letterSpacing = letterSpacing.value + "px";
+        letterSpacingValue.textContent = letterSpacing.value + " px";
     });
     
-    document.getElementById("horizontal").addEventListener("click", () => {
-    
-        output.style.writingMode = "horizontal-tb";
-        output.style.textOrientation = "mixed";
-    
+    // Text color
+    textColor.addEventListener("input", () => {
+        output.style.color = textColor.value;
     });
     
-    document.getElementById("vertical").addEventListener("click", () => {
+    // Background color
+    backgroundColor.addEventListener("input", () => {
+        output.style.backgroundColor = backgroundColor.value;
+    });
     
-        output.style.writingMode = "vertical-rl";
-        output.style.textOrientation = "upright";
+    // Writing mode
+    writingModes.forEach(radio => {
+        radio.addEventListener("change", () => {
     
+            if (radio.value === "horizontal") {
+                output.style.writingMode = "horizontal-tb";
+                output.style.textOrientation = "mixed";
+            } else {
+                output.style.writingMode = "vertical-rl";
+                output.style.textOrientation = "upright";
+            }
+    
+        });
+    });
+    
+    // Alignment
+    alignments.forEach(radio => {
+        radio.addEventListener("change", () => {
+            output.style.textAlign = radio.value;
+        });
     });
 });
