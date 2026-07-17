@@ -8,24 +8,46 @@
   <body>
     <textarea id="input" placeholder="Type here..."></textarea>
 
-    <label>
-      Font size
-      
-      <input
-          type="range"
-          id="size"
-          min="16"
-          max="520"
-          value="36">
-      
-    </label>
+    <div class="controls">
 
-    <button id="horizontal">Horizontal</button>
-    <button id="vertical">Vertical</button>
+    <h3>Writing mode</h3>
 
+    <label><input type="radio" name="mode" value="horizontal" checked> Horizontal</label>
+    <label><input type="radio" name="mode" value="vertical"> Vertical</label>
 
-    <button id="smaller">−</button>
-    <button id="larger">+</button>
+    <h3>Alignment</h3>
+
+    <label><input type="radio" name="align" value="left" checked> Left</label>
+    <label><input type="radio" name="align" value="center"> Center</label>
+    <label><input type="radio" name="align" value="right"> Right</label>
+
+    <h3>Font size</h3>
+    
+    <input type="range" id="fontSize" min="12" max="520" value="36">
+    
+    <span id="fontSizeValue">36 px</span>
+    
+    <h3>Line spacing</h3>
+    
+    <input type="range" id="lineHeight" min="0.8" max="5" step="0.1" value="1.2">
+    
+    <span id="lineHeightValue">1.2</span>
+    
+    <h3>Letter spacing</h3>
+    
+    <input type="range" id="letterSpacing" min="-5" max="120" value="0">
+    
+    <span id="letterSpacingValue">0 px</span>
+    
+    <h3>Colors</h3>
+    
+    Text
+    <input type="color" id="textColor" value="#000000">
+    
+    Background
+    <input type="color" id="backgroundColor" value="#ffffff">
+    
+    </div>
 
     <div id="output"></div>
 
