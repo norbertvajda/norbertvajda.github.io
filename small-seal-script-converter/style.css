@@ -1,8 +1,8 @@
 @font-face {
     font-family: "MyFont";
-    src: url("fonts/MyCustomFont.ttf") format("truetype");
+    src: url("fonts/chongxi_seal.otf") format("opentype");
 }
 
 #output {
-    font-family: "MyFont", serif;
+    font-family: "Chong Xi Small Seal", serif;
 }
