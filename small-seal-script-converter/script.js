@@ -1,33 +1,36 @@
-const input = document.getElementById("input");
-const output = document.getElementById("output");
+document.addEventListener("DOMContentLoaded", function () {
+    const input = document.getElementById("input");
+    const output = document.getElementById("output");
 
-let size = 36;
+    let size = 36;
 
-output.style.fontSize = size + "px";
-
-const modes = [
-    "horizontal-tb",
-    "vertical-rl",
-    "vertical-lr"
-];
-
-let current = 0;
-
-input.addEventListener(input, () => {
-    output.textContent = input.value;
+    output.style.fontSize = size + "px";
+    
+    input.addEventListener("input", () => {
+        output.textContent = input.value;
+    });
+    
+    document.getElementById("larger").addEventListener("click", () => {
+        size += 2;
+        output.style.fontSize = size + "px";
+    });
+    
+    document.getElementById("smaller").addEventListener("click", () => {
+        size = Math.max(8, size - 2);
+        output.style.fontSize = size + "px";
+    });
+    
+    document.getElementById("horizontal").addEventListener("click", () => {
+    
+        output.style.writingMode = "horizontal-tb";
+        output.style.textOrientation = "mixed";
+    
+    });
+    
+    document.getElementById("vertical").addEventListener("click", () => {
+    
+        output.style.writingMode = "vertical-rl";
+        output.style.textOrientation = "upright";
+    
+    });
 });
-
-document.getElementById("larger").onclick = () => {
-    size += 2;
-    output.style.fontSize = size + "px";
-};
-
-document.getElementById("smaller").onclick = () => {
-    size = Math.max(8, size - 2);
-    output.style.fontSize = size + "px";
-};
-
-document.getElementById("nextMode").onclick = () => {
-    current = (current + 1) % modes.length;
-    output.style.writingMode = modes[current];
-};
