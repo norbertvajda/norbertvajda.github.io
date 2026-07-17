@@ -10,43 +10,41 @@
 
     <div class="controls">
 
-    <h3>Writing mode</h3>
+      <div>Writing mode</div>
+      <div>
+          <label><input type="radio" name="mode" value="horizontal" checked> Horizontal</label>
+          <label><input type="radio" name="mode" value="vertical"> Vertical</label>
+      </div>
+      <div></div>
+  
+      <div>Alignment</div>
+      <div>
+          <label><input type="radio" name="align" value="left" checked> Left</label>
+          <label><input type="radio" name="align" value="center"> Center</label>
+          <label><input type="radio" name="align" value="right"> Right</label>
+      </div>
+      <div></div>
+  
+      <div>Font size</div>
+      <input type="range" id="fontSize" min="12" max="120" value="36">
+      <span class="value" id="fontSizeValue">36 px</span>
+  
+      <div>Line spacing</div>
+      <input type="range" id="lineHeight" min="0.8" max="3" step="0.1" value="1.2">
+      <span class="value" id="lineHeightValue">1.2</span>
+  
+      <div>Letter spacing</div>
+      <input type="range" id="letterSpacing" min="-5" max="20" value="0">
+      <span class="value" id="letterSpacingValue">0 px</span>
+  
+      <div>Text color</div>
+      <input type="color" id="textColor" value="#000000">
+      <div></div>
+  
+      <div>Background</div>
+      <input type="color" id="backgroundColor" value="#ffffff">
+      <div></div>
 
-    <label><input type="radio" name="mode" value="horizontal" checked> Horizontal</label>
-    <label><input type="radio" name="mode" value="vertical"> Vertical</label>
-
-    <h3>Alignment</h3>
-
-    <label><input type="radio" name="align" value="left" checked> Left</label>
-    <label><input type="radio" name="align" value="center"> Center</label>
-    <label><input type="radio" name="align" value="right"> Right</label>
-
-    <h3>Font size</h3>
-    
-    <input type="range" id="fontSize" min="12" max="520" value="36">
-    
-    <span id="fontSizeValue">36 px</span>
-    
-    <h3>Line spacing</h3>
-    
-    <input type="range" id="lineHeight" min="0.8" max="5" step="0.1" value="1.2">
-    
-    <span id="lineHeightValue">1.2</span>
-    
-    <h3>Letter spacing</h3>
-    
-    <input type="range" id="letterSpacing" min="-5" max="120" value="0">
-    
-    <span id="letterSpacingValue">0 px</span>
-    
-    <h3>Colors</h3>
-    
-    Text
-    <input type="color" id="textColor" value="#000000">
-    
-    Background
-    <input type="color" id="backgroundColor" value="#ffffff">
-    
     </div>
 
     <div id="output"></div>
