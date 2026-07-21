@@ -219,6 +219,12 @@ input[type="range"]::-moz-range-thumb {
   line-height: 1.6;
 }
 
+.footer-text p:first-child {
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 12px;
+}
+
 .footer-text a {
   color: #8b5cf6;
   text-decoration: none;
