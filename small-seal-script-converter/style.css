@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Chong Xi Small Seal";
-    src: url('fonts/chongxi-seal.woff2') format('woff2'),
+    src: url('fonts/chongxi_seal.woff2') format('woff2'),
         url("fonts/chongxi_seal.otf") format("opentype");
 }
 
