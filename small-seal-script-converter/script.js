@@ -82,4 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
             output.style.textAlign = radio.value;
         });
     });
+
+    // Current year for footer
+    document.getElementById("year").textContent = new Date().getFullYear();
 });
